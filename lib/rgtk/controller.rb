@@ -24,6 +24,10 @@ module Rgtk
     end
 
   protected
+    def window
+      @builder.get_object("#{controller_name}_window")
+    end
+
     def load_view
       @builder = Gtk::Builder.new
       @builder << view_name
