@@ -4,16 +4,17 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "rgtk"
+    gem.name = 'rgtk'
     gem.summary = %Q{Small framework for Ruby GTK development}
     gem.description = %Q{Rails-flavoured Ruby GTK framework}
-    gem.email = "rotuka@tokak.ru"
-    gem.homepage = "http://github.com/rotuka/rgtk"
-    gem.authors = ["Alexander Semyonov"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    gem.add_development_dependency "yard", ">= 0"
-    gem.add_dependency 'xdg'
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.email = 'rotuka@tokak.ru'
+    gem.homepage = 'http://github.com/rotuka/rgtk'
+    gem.authors = ['Alexander Semyonov']
+    gem.add_development_dependency 'thoughtbot-shoulda', '>= 0'
+    gem.add_development_dependency 'yard', '>= 0'
+    gem.add_dependency 'activesupport', '>= 2.3.4'
+    gem.add_dependency 'xdg', '0.5.2'
+    gem.add_dependency 'ya2yaml'
   end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"

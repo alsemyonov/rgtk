@@ -38,7 +38,7 @@ module Rgtk
 
     def view_name
       unless @view_name
-        @view_name = File.join(@application.view_dir, controller_name + '.ui')
+        @view_name = File.join(@application.views_dir, controller_name + '.ui')
         raise "Error: no view provided for #{self.class.name}" unless File.exists?(@view_name)
       end
       @view_name
