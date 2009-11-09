@@ -5,13 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rgtk"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "rotuka@rotuka.com"
+    gem.summary = %Q{Small framework for Ruby GTK development}
+    gem.description = %Q{Rails-flavoured Ruby GTK framework}
+    gem.email = "rotuka@tokak.ru"
     gem.homepage = "http://github.com/rotuka/rgtk"
     gem.authors = ["Alexander Semyonov"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     gem.add_development_dependency "yard", ">= 0"
+    gem.add_dependency 'xdg'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
