@@ -26,7 +26,8 @@ module Rgtk
       Gtk.init
       load_models
       load_controllers
-      if @controllers[:main]
+      if defined?(:MainController)
+        @controllers[:main] = MainController.new
         @controllers[:main].run
       end
       Gtk.main
@@ -41,8 +42,6 @@ module Rgtk
       Dir[File.join(controllers_dir, '**', '*')].each do |controller_file_name|
         controller_name = File.basename(controller_file_name, '.rb')
         require controller_name
-        controller = controller_name.classify.constantize.new
-        @controllers[controller.controller_name.to_sym] = controller
       end
     end
 
