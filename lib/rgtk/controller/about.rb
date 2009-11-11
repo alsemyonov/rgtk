@@ -16,7 +16,7 @@ module Rgtk
           @dialog.authors = [@spec.author]
 
           @dialog.signal_connect('response') do |dialog, button|
-            dialog.hide if button == Gtk::Dialog::RESPONCE_CANCEL
+            dialog.hide if button == Gtk::Dialog::RESPONSE_CANCEL
           end
         end
         @dialog
