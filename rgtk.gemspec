@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rgtk}
-  s.version = "0.0.1"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alexander Semyonov"]
-  s.date = %q{2009-11-09}
+  s.date = %q{2009-11-11}
   s.description = %q{Rails-flavoured Ruby GTK framework}
   s.email = %q{rotuka@tokak.ru}
   s.extra_rdoc_files = [
@@ -26,7 +26,12 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/rgtk.rb",
      "lib/rgtk/app.rb",
+     "lib/rgtk/config.rb",
      "lib/rgtk/controller.rb",
+     "lib/rgtk/controller/about.rb",
+     "lib/rgtk/controller/base.rb",
+     "lib/rgtk/controller/dsl.rb",
+     "rgtk.gemspec",
      "test/helper.rb",
      "test/test_rgtk.rb"
   ]
@@ -47,16 +52,22 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<yard>, [">= 0"])
-      s.add_runtime_dependency(%q<xdg>, [">= 0"])
+      s.add_runtime_dependency(%q<activesupport>, [">= 2.3.4"])
+      s.add_runtime_dependency(%q<xdg>, ["= 0.5.2"])
+      s.add_runtime_dependency(%q<ya2yaml>, [">= 0"])
     else
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_dependency(%q<yard>, [">= 0"])
-      s.add_dependency(%q<xdg>, [">= 0"])
+      s.add_dependency(%q<activesupport>, [">= 2.3.4"])
+      s.add_dependency(%q<xdg>, ["= 0.5.2"])
+      s.add_dependency(%q<ya2yaml>, [">= 0"])
     end
   else
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
     s.add_dependency(%q<yard>, [">= 0"])
-    s.add_dependency(%q<xdg>, [">= 0"])
+    s.add_dependency(%q<activesupport>, [">= 2.3.4"])
+    s.add_dependency(%q<xdg>, ["= 0.5.2"])
+    s.add_dependency(%q<ya2yaml>, [">= 0"])
   end
 end
 
