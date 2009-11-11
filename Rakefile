@@ -16,6 +16,7 @@ begin
     gem.add_dependency 'xdg', '0.5.2'
     gem.add_dependency 'ya2yaml'
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
@@ -52,3 +53,6 @@ rescue LoadError
     abort "YARD is not available. In order to run yardoc, you must: sudo gem install yard"
   end
 end
+
+desc "Bump gem version, release and install"
+task :push => %w(version:bump:patch release gemcutter:release install)
