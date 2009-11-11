@@ -10,12 +10,13 @@ module Rgtk
           @spec = Gem.loaded_specs[@gem_name]
 
           @dialog.program_name = @spec.summary
+          @dialog.comments = @spec.description
           @dialog.version = @spec.version.to_s
           @dialog.website = @spec.homepage
           @dialog.authors = [@spec.author]
 
           @dialog.signal_connect('response') do |dialog, button|
-            dialog.hide if button = -6
+            dialog.hide if button == Gtk::Dialog::RESPONCE_CANCEL
           end
         end
         @dialog

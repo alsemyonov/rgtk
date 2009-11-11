@@ -12,8 +12,12 @@ module Rgtk
         @_controller_name
       end
 
+      def controller_name=(name)
+        @_controller_name = name
+      end
+
       def initialize
-        @_controller_name = self.class.controller_name
+        @_controller_name ||= self.class.controller_name
         load_objects
       end
 

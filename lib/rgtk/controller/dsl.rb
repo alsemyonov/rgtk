@@ -10,9 +10,9 @@ module Rgtk
       end
 
       def signals_for(object)
-        @_current_object = object
+        _current_object.push(object)
         yield
-        @_current_object = nil
+        _current_object.pop
       end
 
       def on(action, &block)
@@ -39,11 +39,15 @@ module Rgtk
 
     protected
       def signal_prefix
-        if @_current_object
-          "on_#{@_current_object}"
-        else
+        if _current_object.empty?
           'on'
+        else
+          "on_#{_current_object.join('_')}"
         end
+      end
+
+      def _current_object
+        @_current_object ||= []
       end
     end
   end

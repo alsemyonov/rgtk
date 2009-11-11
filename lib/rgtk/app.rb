@@ -22,7 +22,6 @@ module Rgtk
     end
 
     def run
-      connect_db if config.use_db?
       Gtk.init
       load_models
       load_controllers
@@ -46,6 +45,7 @@ module Rgtk
     end
 
     def load_models
+      connect_db if config.use_db?
       Dir[File.join(models_dir, '**', '*')].each do |model_file_name|
         model_name = File.basename(model_file_name, '.rb')
         require model_name
