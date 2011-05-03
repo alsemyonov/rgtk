@@ -1,3 +1,5 @@
+require 'rgtk'
+
 module Rgtk
   class Config
     def initialize(file_name = 'config.yml')

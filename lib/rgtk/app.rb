@@ -1,3 +1,5 @@
+require 'rgtk'
+
 require 'singleton'
 require 'xdg'
 require 'activesupport'

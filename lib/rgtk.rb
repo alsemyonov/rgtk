@@ -1,10 +1,11 @@
-require 'activesupport'
-$KCODE = 'UTF-8'
+require 'activesupport/core_ext/module/attribute_accessors'
+
+$KCODE = 'UTF-8' if RUBY_VERSION[0..3] == '1.8.'
 
 module Rgtk
   mattr_accessor :root
-end
 
-require 'rgtk/app'
-require 'rgtk/config'
-require 'rgtk/controller'
+  autoload :App,        'rgtk/app'
+  autoload :Config,     'rgtk/config'
+  autoload :Controller, 'rgtk/controller'
+end

@@ -1,3 +1,4 @@
+require 'rgtk'
 require 'activesupport'
 require 'gtk2'
 
